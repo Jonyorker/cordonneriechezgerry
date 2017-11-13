@@ -7,7 +7,7 @@
 <div class="list-group">
   	<?php 
 		foreach ($clients->result() as $row) {
-			echo anchor('/Client/show/'.$row->client_id, $row->first_name.' '.$row->last_name.' | '.$row->street_address.', '.$row->city.', '.$row->postal, array('class' => 'list-group-item')); 
+			echo anchor('/Client/show/'.$row->client_id, $row->first_name.' '.$row->last_name.' | Cell: '.$row->cell.', Tel: '.$row->phone.' | '.$row->street_address.', '.$row->city.', '.$row->postal, array('class' => 'list-group-item')); 
 		}
 	?>
 </div>

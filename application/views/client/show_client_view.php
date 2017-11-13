@@ -31,17 +31,17 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 1</label>  
+  <label class="col-md-4 control-label" for="textinput">Cell</label>  
   <div class="col-md-4">
-  <?php echo form_input('phone_1',$query['phone_1'], array('placeholder' => 'Phone 1', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('cell',$query['cell'], array('placeholder' => 'Cell', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 2</label>  
+  <label class="col-md-4 control-label" for="textinput">Téléphone</label>  
   <div class="col-md-4">
-  <?php echo form_input('phone_2',$query['phone_2'], array('placeholder' => 'Phone 2', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('phone',$query['phone'], array('placeholder' => 'Téléphone', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
@@ -77,25 +77,10 @@
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Emergency Contact Name</label>  
-  <div class="col-md-4">
-  <?php echo form_input('emergency_name',$query['emergency_name'], array('placeholder' => 'Emergency Contact Name', 'class' => 'form-control input-md')); ?>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Emergency Contact Phone</label>  
-  <div class="col-md-4">
-  <?php echo form_input('emergency_phone_number',$query['emergency_phone_number'], array('placeholder' => 'Emergency Contact Phone', 'class' => 'form-control input-md')); ?>
-  </div>
-</div>
-
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4 col-md-push-4">
-    <?php echo form_submit('', 'Update Information', array('class' => 'btn btn-primary btn-block')); ?>
+    <?php echo form_submit('', 'Update', array('class' => 'btn btn-primary btn-block')); ?>
   </div>
 </div>
 
@@ -103,10 +88,10 @@
 
 <?php echo form_close(); ?>
 <hr>
-<h2 class="text-center">Other options</h2>
+<h2 class="text-center">Autre options</h2>
 <hr>
   <div class="col-md-4 col-md-push-4">
-    <?php echo anchor('Event/create/'.$query['client_id'], 'Add Event', array('class' => 'btn btn-success btn-block')); ?>
+    <?php echo anchor('Job/create/'.$query['client_id'], 'Ajoute Job', array('class' => 'btn btn-success btn-block')); ?>
     <hr>
-    <?php echo anchor('Client/destroy/'.$query['client_id'], 'Delete Client', array('class' => 'btn btn-danger btn-block')); ?>
+    <?php echo anchor('Client/destroy/'.$query['client_id'], 'Supprimé le client', array('class' => 'btn btn-danger btn-block')); ?>
   </div>

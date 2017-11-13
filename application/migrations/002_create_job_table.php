@@ -2,60 +2,50 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Create_Client_Table extends CI_Migration {
+class Migration_Create_Job_Table extends CI_Migration {
 
         public function up()
         {
                 $this->dbforge->add_field(array(
-                        'client_id' => array(
+                        'job_id' => array(
                                 'type' => 'INT',
                                 'constraint' => 5,
                                 'unsigned' => TRUE,
                                 'auto_increment' => TRUE
                         ),
-                        'first_name' => array(
+                        'client_id' => array(
+                                'type' => 'INT',
+                                'constraint' => 5,
+                                'null' => TRUE,
+                        ),
+                        'job_type' => array(
                                 'type' => 'TEXT',
                                 'null' => TRUE,
                         ),
-                        'last_name' => array(
+                        'start_date' => array(
                                 'type' => 'TEXT',
                                 'null' => TRUE,
                         ),
-                        'email' => array(
+                        'end_date' => array(
                                 'type' => 'TEXT',
                                 'null' => TRUE,
                         ),
-                        'cell' => array(
+                        'notes' => array(
                                 'type' => 'TEXT',
                                 'null' => TRUE,
                         ),
-                        'phone' => array(
+                        'price' => array(
                                 'type' => 'TEXT',
                                 'null' => TRUE,
                         ),
-                        'street_address' => array(
-                                'type' => 'TEXT',
-                                'null' => TRUE,
-                        ),
-                        'city' => array(
-                                'type' => 'TEXT',
-                                'null' => TRUE,
-                        ),
-                        'province' => array(
-                                'type' => 'TEXT',
-                                'null' => TRUE,
-                        ),
-                        'postal' => array(
-                                'type' => 'TEXT',
-                                'null' => TRUE,
-                        ),
+                        
                 ));
-                $this->dbforge->add_key('client_id', TRUE);
-                $this->dbforge->create_table('admin_client');
+                $this->dbforge->add_key('job_id', TRUE);
+                $this->dbforge->create_table('admin_job');
         }
 
         public function down()
         {
-                $this->dbforge->drop_table('admin_client');
+                $this->dbforge->drop_table('admin_job');
         }
 }

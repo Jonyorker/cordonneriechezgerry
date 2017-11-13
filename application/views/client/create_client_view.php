@@ -3,62 +3,62 @@
 <fieldset>
 
 <!-- Form Name -->
-<h2 class="text-center">Add a client</h2>
+<h2 class="text-center">Ajoute un client</h2>
 <hr>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">First Name</label>  
+  <label class="col-md-4 control-label" for="textinput">Premier nom</label>  
   <div class="col-md-4">
-  <?php echo form_input('first_name','', array('placeholder' => 'First Name', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('first_name','', array('placeholder' => 'Premier nom', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Last Name</label>  
+  <label class="col-md-4 control-label" for="textinput">Dernier nom</label>  
   <div class="col-md-4">
-  <?php echo form_input('last_name','', array('placeholder' => 'Last Name', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('last_name','', array('placeholder' => 'Dernier nom', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Email</label>  
+  <label class="col-md-4 control-label" for="textinput">Courriel</label>  
   <div class="col-md-4">
-  <?php echo form_input('email','', array('placeholder' => 'Email', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('email','', array('placeholder' => 'Courriel', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 1</label>  
+  <label class="col-md-4 control-label" for="textinput">Céllulaire</label>  
   <div class="col-md-4">
-  <?php echo form_input('phone_1','', array('placeholder' => 'Phone 1', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('cell','', array('placeholder' => 'Céllulaire', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 2</label>  
+  <label class="col-md-4 control-label" for="textinput">Téléphone</label>  
   <div class="col-md-4">
-  <?php echo form_input('phone_2','', array('placeholder' => 'Phone 2', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('phone','', array('placeholder' => 'Téléphone', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Street Address</label>  
+  <label class="col-md-4 control-label" for="textinput">Adresse</label>  
   <div class="col-md-4">
-  <?php echo form_input('street_address','', array('placeholder' => 'Street Address', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('street_address','', array('placeholder' => 'Adresse', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">City</label>  
+  <label class="col-md-4 control-label" for="textinput">Ville</label>  
   <div class="col-md-4">
-  <?php echo form_input('city','', array('placeholder' => 'City', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('city','', array('placeholder' => 'Ville', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
@@ -66,38 +66,22 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Province</label>  
   <div class="col-md-4">
-  <?php echo form_input('province','', array('placeholder' => 'province', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('province','', array('placeholder' => 'Province', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Postal Code</label>  
+  <label class="col-md-4 control-label" for="textinput">Code Postale</label>  
   <div class="col-md-4">
-  <?php echo form_input('postal','', array('placeholder' => 'Postal Code', 'class' => 'form-control input-md')); ?>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Emergency Contact Name</label>  
-  <div class="col-md-4">
-  <?php echo form_input('emergency_name','', array('placeholder' => 'Emergency Contact Name', 'class' => 'form-control input-md')); ?>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Emergency Contact Phone</label>  
-  <div class="col-md-4">
-  <?php echo form_input('emergency_phone_number','', array('placeholder' => 'Emergency Contact Phone', 'class' => 'form-control input-md')); ?>
+  <?php echo form_input('postal','', array('placeholder' => 'Code Postale', 'class' => 'form-control input-md')); ?>
   </div>
 </div>
 
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4 col-md-push-4">
-    <?php echo form_submit('', 'Create Client', array('class' => 'btn btn-primary btn-block')); ?>
+    <?php echo form_submit('', 'Créé Client', array('class' => 'btn btn-primary btn-block')); ?>
   </div>
 </div>
 

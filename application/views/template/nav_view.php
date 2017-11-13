@@ -5,7 +5,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
           </button> -->
-          <?php echo anchor('', 'Return home', array('class' => 'navbar-brand')); ?>
+          <?php echo anchor('', 'Retour maison', array('class' => 'navbar-brand')); ?>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <!-- <ul class="nav navbar-nav">
