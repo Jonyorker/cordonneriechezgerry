@@ -32,7 +32,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 1</label>  
+  <label class="col-md-4 control-label" for="textinput">Cell</label>  
   <div class="col-md-4">
   <?php echo $client['cell'];?>
   </div>
@@ -40,7 +40,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Phone 2</label>  
+  <label class="col-md-4 control-label" for="textinput">Téléphone</label>  
   <div class="col-md-4">
   <?php echo $client['phone'];?>
   </div>
@@ -135,7 +135,13 @@
 
 <div class="form-group">
   <div class="col-md-4 col-md-push-4">
-    <?php echo form_submit('', 'Termine le traveau', array('class' => 'btn btn-success btn-block')); ?>
+    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Contact le client</button>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-4 col-md-push-4">
+    <button type="button" class="btn btn-success btn-block" onclick="window.print();">Imprime billet</button>
   </div>
 </div>
 
@@ -148,13 +154,57 @@
     <?php echo anchor('Job/destroy/'.$job['job_id'], 'Supprimier le traveau', array('class' => 'btn btn-danger btn-block')); ?>
   </div>
 
-<script>
-  $(document).ready(function(){
-    var signature_1_val = "<?php echo $job['signature_1']; ?>";
-    var signature_2_val = "<?php echo $job['signature_2']; ?>";
-    var signature_3_val = "<?php echo $job['signature_3']; ?>";
-    $("input[name=signature_1]").val(signature_1_val);
-    $("input[name=signature_2]").val(signature_2_val);
-    $("input[name=signature_3]").val(signature_3_val);
-});
-</script>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Contact le client</h4>
+        </div>
+        <?php if (strlen($client['cell']) >= 1): ?>
+          <div class="modal-body">
+          Cell : <?php echo $client['cell']; ?> <a class="btn btn-default" href="<?php echo "tel:".$client['cell']; ?>">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+        <?php endif ?>
+        <?php if (strlen($client['phone']) >= 1): ?>
+          <div class="modal-body">
+          Tél : <?php echo $client['phone']; ?> <a class="btn btn-default" href="<?php echo "tel:".$client['phone']; ?>">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+        <?php endif ?>
+        <?php if (strlen($client['email']) >= 1): ?>
+          <div class="modal-body">
+          Courriel : <?php echo $client['email']; ?> <a class="btn btn-default" href="<?php echo "mailto:".$client['email']; ?>">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+        <?php endif ?>
+        
+        
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- printable section -->
+  <div class="print">
+    <div class="row">
+      <div class="col-md-12">
+        <?php echo $client['first_name']; ?>, <?php echo $client['last_name']; ?>
+        <br>
+        <?php echo $job['job_type'];?>
+        <br>
+        <?php echo $job['notes'];?>
+      </div>
+    </div>
+  </div>

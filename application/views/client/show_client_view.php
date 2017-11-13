@@ -1,4 +1,5 @@
 
+<div class="row">
 <?php echo form_open('Client/update/'.$query['client_id'], array('class' => 'form-horizontal')); ?>
 <fieldset>
 <!-- Form Name -->
@@ -87,6 +88,8 @@
 </fieldset>
 
 <?php echo form_close(); ?>
+</div>
+<div class="row">
 <hr>
 <h2 class="text-center">Autre options</h2>
 <hr>
@@ -95,3 +98,34 @@
     <hr>
     <?php echo anchor('Client/destroy/'.$query['client_id'], 'Supprimé le client', array('class' => 'btn btn-danger btn-block')); ?>
   </div>
+</div>
+<div class="row">
+  <hr>
+<h2 class="text-center">Travaux actuel</h2>
+<hr>
+<div class="col-md-12">
+  <div class="list-group">
+    <?php 
+    foreach ($jobs_open->result() as $row) {
+      $client = $this->client_model->retrieve($row->client_id);
+      echo anchor('/Job/show/'.$row->job_id.'/'.$row->client_id, $client['first_name'].' '.$client['last_name'].' | '.$row->job_type.' | '.$row->start_date.' | '.$row->notes, array('class' => 'list-group-item')); 
+    }
+  ?>
+</div>
+</div>
+</div>
+<div class="row">
+  <hr>
+<h2 class="text-center">Travaux historique</h2>
+<hr>
+<div class="col-md-12">
+  <div class="list-group">
+    <?php 
+    foreach ($jobs_closed->result() as $row) {
+      $client = $this->client_model->retrieve($row->client_id);
+      echo anchor('/Job/show/'.$row->job_id.'/'.$row->client_id, $client['first_name'].' '.$client['last_name'].' | '.$row->job_type.' | '.$row->start_date.' | '.$row->notes, array('class' => 'list-group-item')); 
+    }
+  ?>
+</div>
+</div>
+</div>

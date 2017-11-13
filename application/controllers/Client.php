@@ -45,6 +45,11 @@ class Client extends CI_Controller {
 		// Get client info
 		$data['query'] = $this->client_model->retrieve($client_id);
 
+		// Get job info
+		$data['jobs_open'] = $this->job_model->list_open();
+		$data['jobs_closed'] = $this->job_model->list_closed();
+
+
 		// Load views
 		$data['main_content'] = 'client/show_client_view';
         $this->load->view('template/body_view', $data);

@@ -14,9 +14,14 @@ class Job_model extends CI_Model {
             return $query->row_array();
         }
 
-        function list()
+        function list_open()
         {
-            $query = $this->db->get('admin_job');
+            $query = $this->db->get_where('admin_job', array('end_date' => ''));
+            return $query;
+        }
+        function list_closed()
+        {
+            $query = $this->db->get_where('admin_job', array('end_date !=' => NULL or ''));
             return $query;
         }
 

@@ -34,7 +34,7 @@ class Job extends CI_Controller {
 	public function list_open()
 	{
 		// Get list of jobs
-        $data['jobs'] = $this->job_model->list();
+        $data['jobs'] = $this->job_model->list_open();
 
         // Load views
 		$data['main_content'] = 'job/show_job_list_view';
@@ -44,7 +44,7 @@ class Job extends CI_Controller {
 	public function list_closed()
 	{
 		// Get list of jobs
-        $data['jobs'] = $this->job_model->list();
+        $data['jobs'] = $this->job_model->list_closed();
 
         // Load views
 		$data['main_content'] = 'job/show_job_list_view';
